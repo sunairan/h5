@@ -2,6 +2,7 @@
 <html>
 <head>
     <script>
+      document.addEventListener('touchmove', function(e){e.preventDefault()}, false);
           var testENV = window.location.host.indexOf('rc');
           var test = {
             appId: 'wx9d5d40cfa33f1085',
@@ -11,10 +12,10 @@
             appId: 'wx969f487a45509862',
             host: 'https://wx.xiaozao.org'
           }
-            var hash = window.location.hash;
+          console.log(testENV)
             var pathName = window.location.pathname;
-            var redictPage = pathName + '?' + hash;
-          var localValue = (testENV === -1 ) ? test : pro;
+            var redictPage = pathName;
+          var localValue = (testENV !== -1 ) ? test : pro;
           var appId = localValue.appId;
           var host = localValue.host;
           var authUrl = host + '/auth/login';
@@ -32,13 +33,34 @@
             }
         }
     </script>
-    <title>小灶能力学院</title>
+    <title>商业英语毕业啦</title>
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0' />
     <style type="text/css">
         * {
             margin: 0;
             padding: 0;
+        }
+        html {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        .page {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
         }
         .loading {
             text-align: center;
@@ -55,11 +77,11 @@
     </style>
 </head>
 <body>
-<link rel='stylesheet' type='text/css' href='/static/animate.min.css' />
-<script type="text/javascript" src="/static/jweixin.js"></script>
-<script type="text/javascript" src='/static/gaprod.js' ></script>
-<div id="root">
-    <div class="loading"><img src='/static/img/loading_icon.png' /></div>
+<link rel='stylesheet' type='text/css' href='/static/h5/animate.min.css' />
+<script type="text/javascript" src="/static/h5/jweixin.js"></script>
+<script type="text/javascript" src='/static/h5/gaprod.js' ></script>
+<div class="page" id="root">
+    <div class="loading"><img src='/static/h5/img/loading_icon.png' /></div>
 </div>
 </body>
 </html>
